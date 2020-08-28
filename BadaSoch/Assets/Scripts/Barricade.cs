@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Barricade : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Barricade : MonoBehaviour
     {
        // Debug.Log(Vector3.Distance(gameObject.transform.position, player.transform.position));
         if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) < 5) {
-           // Debug.Log("reached");
+            SceneManager.LoadScene("GameCompleted");
         }
     }
     
