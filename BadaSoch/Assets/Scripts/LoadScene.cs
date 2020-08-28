@@ -18,6 +18,12 @@ public class LoadScene : MonoBehaviour
         
     }
    public  void loadScene(string scene) {
-        SceneManager.LoadScene(scene);
+        if (scene != "Exit")
+        {
+            SceneManager.LoadScene(scene);
+        }
+        else if (scene == "Exit") {
+            Application.Quit();
+        }
     }
 }
