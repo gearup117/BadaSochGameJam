@@ -28,11 +28,12 @@ public class ZombieAttack : MonoBehaviour
         if (distanceBetween <= navMesh.stoppingDistance)
         {
             anim.SetBool("Attack", true);
+            navMesh.speed = 0;
             
 
         }
         else {
-            anim.SetBool("Attack", false);
+           // anim.SetBool("Attack", false);
         }
 
     }
@@ -42,5 +43,6 @@ public class ZombieAttack : MonoBehaviour
         var pl = player.GetComponent<PlayerStats>();
         pl.maxHealth -= damage;
         pl.health = pl.maxHealth;
+        anim.SetBool("Attack", false);
     }
 }

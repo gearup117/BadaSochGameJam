@@ -57,16 +57,19 @@ public class EnemyFollow : MonoBehaviour
             sawPlayer = Physics.CheckSphere(transform.position, viewRadius, playerMask);
         }
         
-        if (canWalk && health > 0)
+        if (canWalk && health > 0 )
         {
             
-            if (sawPlayer)
+            if (sawPlayer )
             {
-                sawPlayer = true;
-                var player = GameObject.FindGameObjectWithTag("Player").transform;
-                navMesh.speed = playerKilled.chaseSpeed;
-                
-                navMesh.SetDestination(player.position);
+                if (!anim.GetBool("Attack"))
+                {
+                    sawPlayer = true;
+                    var player = GameObject.FindGameObjectWithTag("Player").transform;
+                    navMesh.speed = playerKilled.chaseSpeed;
+                    anim.SetFloat("WalkSpeed", navMesh.speed);
+                    navMesh.SetDestination(player.position);
+                }
             }
             else
             {
@@ -123,6 +126,7 @@ public class EnemyFollow : MonoBehaviour
         if (!anim.GetBool("Death"))
         {
             navMesh.speed = playerKilled.speed;
+            anim.SetFloat("WalkSpeed", navMesh.speed);
         }
         else {
             navMesh.speed = 0f;
