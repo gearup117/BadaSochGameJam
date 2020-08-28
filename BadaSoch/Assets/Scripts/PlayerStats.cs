@@ -54,7 +54,5 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
-    public void die() {
-        SceneManager.LoadScene("Retry");
-    }
+    
 }
