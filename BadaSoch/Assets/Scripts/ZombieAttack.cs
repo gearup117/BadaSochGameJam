@@ -39,7 +39,7 @@ public class ZombieAttack : MonoBehaviour
     }
     //Decrease the health after waiting for some time
    public void attack() {
-        Debug.Log("attack");
+        
         var pl = player.GetComponent<PlayerStats>();
         pl.maxHealth -= damage;
         pl.health = pl.maxHealth;

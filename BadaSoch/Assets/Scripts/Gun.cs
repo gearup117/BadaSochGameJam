@@ -43,8 +43,9 @@ public class Gun : MonoBehaviour
             
             Invoke("reload", 2f);
         }
-       
-        
+        bulletNoText.text = bulletNo.ToString();
+        totalMagzine.text = totalBullet.ToString();
+
     }
     private void shoot()
     {
