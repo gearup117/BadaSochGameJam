@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -52,5 +53,8 @@ public class PlayerStats : MonoBehaviour
             anim.SetTrigger("Die");
         }
         
+    }
+    public void die() {
+        SceneManager.LoadScene("Retry");
     }
 }

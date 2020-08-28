@@ -33,7 +33,7 @@ public class ZombieAttack : MonoBehaviour
 
         }
         else {
-           // anim.SetBool("Attack", false);
+            anim.SetBool("Attack", false);
         }
 
     }
