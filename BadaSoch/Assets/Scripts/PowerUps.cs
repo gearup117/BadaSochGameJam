@@ -26,7 +26,7 @@ public class PowerUps : MonoBehaviour
             if (type == "BulletReset") {
                 Debug.Log("Bullet");
                 var a = player.GetComponentInChildren<Gun>();
-                a.bulletNo = 30;
+                
                 a.totalBullet = 120;
                 Destroy(gameObject);
             }
