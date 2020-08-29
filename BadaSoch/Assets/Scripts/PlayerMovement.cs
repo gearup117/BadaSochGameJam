@@ -21,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded, isCollided;
     Vector3 velocity;
     public float speed, sprint;
+    PlayerStats playerStats;
     // Start is called before the first frame update
     void Start()
     {
+        playerStats = gameObject.GetComponent<PlayerStats>();
         //health = 100;
         //InvokeRepeating("decreaseHealth", 0.5f, 0.5f);
     }
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         look();
-        if (!Input.GetMouseButton(0) && !anim.GetBool("reload"))
+        if (!Input.GetMouseButton(0) && !anim.GetBool("reload") && playerStats.health > 0)
         {
             move();
         }

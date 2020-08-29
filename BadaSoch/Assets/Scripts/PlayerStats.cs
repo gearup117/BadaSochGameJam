@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
 
             if (anim.GetBool("run") && health > 0)
             {
-                health--;
+                health -= 3;
 
             }
             else if (health < maxHealth)
@@ -50,7 +50,9 @@ public class PlayerStats : MonoBehaviour
         {
             maxHealthText.text = "0";
             healthText.text = "0";
+            anim.SetBool("run", false);
             anim.SetTrigger("Die");
+            
         }
         
     }
