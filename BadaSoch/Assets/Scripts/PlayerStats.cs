@@ -25,7 +25,9 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
     }
     void decreaseHealth()
     {
@@ -47,6 +49,7 @@ public class PlayerStats : MonoBehaviour
             healthText.text = health.ToString();
         }
         else
+        //Player Dies
         {
             maxHealthText.text = "0";
             healthText.text = "0";

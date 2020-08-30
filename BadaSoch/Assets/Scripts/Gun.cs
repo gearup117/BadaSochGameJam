@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
             bulletNoText.text = bulletNo.ToString();
             var a = Instantiate(bullet.gameObject, new Vector3(gunPoint.position.x +Random.Range(-0.2f,0.2f),gunPoint.position.y,gunPoint.position.z), gunPoint.rotation);
         }
-        if (bulletNo <= 0 || Input.GetKeyDown(KeyCode.R)) {
+        if ((bulletNo <= 0 || Input.GetKeyDown(KeyCode.R)) && totalBullet > 0) {
             anim.SetBool("run", false);
             anim.SetFloat("vertical", 0f);
             anim.SetFloat("horizontal", 0f);
@@ -45,6 +45,11 @@ public class Gun : MonoBehaviour
         }
         bulletNoText.text = bulletNo.ToString();
         totalMagzine.text = totalBullet.ToString();
+
+        //Dosent allow the totalBullet variable negative
+        if (totalBullet < 0) {
+            totalBullet = 0;
+        }
 
     }
     private void shoot()
