@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5643227895442511818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203919401023441060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b453a7da0b2e84dbe2db71f9c859b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3203919401014098792}
+  bulletNoText: {fileID: 0}
+  totalMagzine: {fileID: 0}
+  gunPoint: {fileID: 5643227896611790567}
+  bulletNo: 30
+  totalBullet: 120
+  bullet: {fileID: 3009546802790854198, guid: 7c89afb78b87a154fb5de94e104cbcc6, type: 3}
+  crossHair: {fileID: 5643227896259208562}
+  timeBetweenShots: 0.2
+--- !u!114 &1491709720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203919401023441130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b10a1d841982346adbebcb5613637f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5643227895539655677
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxHealth: 50
+  maxHealth: 500
   healthText: {fileID: 0}
   maxHealthText: {fileID: 0}
 --- !u!1 &5643227896259208557
@@ -271,27 +304,6 @@ Transform:
   m_Father: {fileID: 3203919401023411332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5643227895442511818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3203919401023441060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b453a7da0b2e84dbe2db71f9c859b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 3203919401014098792}
-  bulletNoText: {fileID: 0}
-  totalMagzine: {fileID: 0}
-  gunPoint: {fileID: 5643227896611790567}
-  bulletNo: 30
-  totalBullet: 120
-  bullet: {fileID: 3009546802790854198, guid: 7c89afb78b87a154fb5de94e104cbcc6, type: 3}
-  crossHair: {fileID: 5643227896259208562}
-  timeBetweenShots: 0.2
 --- !u!1001 &5643227895905297720
 PrefabInstance:
   m_ObjectHideFlags: 0
