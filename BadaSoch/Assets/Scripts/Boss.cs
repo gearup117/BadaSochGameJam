@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
+    public int damage;
     public Image healthBar;
     public float health;
     public LayerMask playerMask;
@@ -72,7 +73,7 @@ public class Boss : MonoBehaviour
        
     }
     public void damagePlayer() {
-        player.GetComponent<PlayerStats>().maxHealth -= 5;
+        player.GetComponent<PlayerStats>().maxHealth -= damage;
         
     }
     void waitToRun() {
