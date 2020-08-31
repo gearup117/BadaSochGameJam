@@ -28,20 +28,40 @@ public class Gun : MonoBehaviour
     {
         shoot();
         setCrossHair();
-        //shoot
-        if (Input.GetMouseButton(0) && Time.time >= shotCounter && bulletNo >0 &&  !anim.GetBool("reload") ) {
-            shotCounter = Time.time + timeBetweenShots;
-            bulletNo--;
-            bulletNoText.text = bulletNo.ToString();
-            var a = Instantiate(bullet.gameObject, new Vector3(gunPoint.position.x +Random.Range(-0.2f,0.2f),gunPoint.position.y,gunPoint.position.z), gunPoint.rotation);
-        }
+        
+        //Reload
         if ((bulletNo <= 0 || Input.GetKeyDown(KeyCode.R)) && totalBullet > 0) {
             anim.SetBool("run", false);
             anim.SetFloat("vertical", 0f);
             anim.SetFloat("horizontal", 0f);
             anim.SetBool("reload", true);
+            if (totalBullet > 0)
+            {
+                var usedBullet = 30 - bulletNo;
+
+                totalBullet = totalBullet - (30 - bulletNo);
+
+
+                totalMagzine.text = totalBullet.ToString();
+                bulletNo = 30;
+                bulletNoText.text = bulletNo.ToString();
+
+            }
+
+            else
+            {
+                totalMagzine.text = "0";
+            }
+            Invoke("reload", 3f);
             
-            Invoke("reload", 2f);
+        }
+        //shoot
+        else if (Input.GetMouseButton(0) && Time.time >= shotCounter && bulletNo > 0 && !anim.GetBool("reload"))
+        {
+            shotCounter = Time.time + timeBetweenShots;
+            bulletNo--;
+            bulletNoText.text = bulletNo.ToString();
+            var a = Instantiate(bullet.gameObject, new Vector3(gunPoint.position.x + Random.Range(-0.2f, 0.2f), gunPoint.position.y, gunPoint.position.z), gunPoint.rotation);
         }
         bulletNoText.text = bulletNo.ToString();
         totalMagzine.text = totalBullet.ToString();
@@ -65,25 +85,26 @@ public class Gun : MonoBehaviour
 
     }
     void reload() {
-        if (totalBullet > 0)
-        {
-            var usedBullet = 30 - bulletNo;
+        //if (totalBullet > 0)
+        //{
+        //    var usedBullet = 30 - bulletNo;
 
-            totalBullet = totalBullet - (30 - bulletNo);
+        //    totalBullet = totalBullet - (30 - bulletNo);
 
 
-            totalMagzine.text = totalBullet.ToString();
-            bulletNo = 30;
-            bulletNoText.text = bulletNo.ToString();
-        }
-
-        else
-        {
-            totalMagzine.text = "0";
-        }
+        //    totalMagzine.text = totalBullet.ToString();
+        //    bulletNo = 30;
+        //    bulletNoText.text = bulletNo.ToString();
             
-            anim.SetBool("reload", false);
-        
+        //}
+
+        //else
+        //{
+        //    totalMagzine.text = "0";
+        //}
+        anim.SetBool("reload", false);
+
+
     }
     void setCrossHair() {
         float x = Mathf.Clamp(playerMovement.pointToLookAt.x, crossHair.position.x - 5, crossHair.position.x+ 5);
