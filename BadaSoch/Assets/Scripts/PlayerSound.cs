@@ -4,37 +4,110 @@ using UnityEngine;
 
 public class PlayerSound : MonoBehaviour
 {
-    public AudioSource[] audioSource;
+    public AudioSource audioSource;
+    public AudioClip[] audioClip;
+    public Animator anim;
+    bool running,shooting;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //audioSource.clip = audioClip[3];
+    }
     void Start()
     {
-        
+        playSound();
     }
 
+   
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
+        if (!anim.GetBool("shoot"))
         {
-            Debug.Log("audio");
-            if (!audioSource[0].isPlaying)
-            {
+            run();
+        }
+       shoot();
+        playSound();
+       
 
-                audioSource[0].Play();
-            }
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                if (!audioSource[1].isPlaying)
-                {
-                    audioSource[0].Pause();
-                    audioSource[1].Play();
-                }
-            }
+    }
+    void run() {
+        //Walk
+        //if ((anim.GetFloat("vertical") != 0 || anim.GetFloat("horizontal") != 0))
+        //{
+
+        //    running = true;
+
+        //    audioSource.clip = audioClip[0];
+
+        //    if (!audioSource.isPlaying)
+        //    {
+        //        audioSource.Play();
+        //    }
+
+
+        //}
+        //else if(!shooting)
+        //{
+        //    running = false;
+        //    audioSource.Pause();
+        //}
+        //////Run
+        //if (anim.GetBool("run"))
+        //{
+        //    running = true;
+        //    audioSource.clip = audioClip[1];
+
+
+        //    if (!audioSource.isPlaying)
+        //    {
+        //        audioSource.Play();
+        //    }
+        //}
+        //else if ((anim.GetFloat("vertical") == 0 && anim.GetFloat("horizontal") == 0) && !shooting)
+        //{
+        //    running = false;
+        //    audioSource.Pause();
+
+        //}
+        if ((anim.GetFloat("vertical") != 0 || anim.GetFloat("horizontal") != 0))
+        {
+            
+            audioSource.clip = audioClip[0];
+            
+        }
+        else if (anim.GetBool("run"))
+        {
+            
+            audioSource.clip = audioClip[1];
+            
         }
         else {
-            audioSource[0].Pause();
-            audioSource[1].Pause();
+            
+            audioSource.clip = audioClip[3];
+            
         }
+    }
+    void shoot() {
+        if (anim.GetBool("shoot"))
+        {
+            
+            audioSource.clip = audioClip[2];
+            
+
+        }
+        else{
+            //audioSource.clip = audioClip[3];
+            
+        }
+    }
+    void playSound()
+    {
         
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }

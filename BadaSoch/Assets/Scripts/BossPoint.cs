@@ -10,7 +10,7 @@ public class BossPoint : MonoBehaviour
     bool sawPlayer;
    public float radius;
     public GameObject bossBarricade;
-    
+    public BackgroundMusic backGroundMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +24,7 @@ public class BossPoint : MonoBehaviour
         if (sawPlayer) {
             bossBarricade.SetActive(true);
             healthBar.SetActive(true);
+            backGroundMusic.change();
         }
     }
     public void OnDrawGizmosSelected()
