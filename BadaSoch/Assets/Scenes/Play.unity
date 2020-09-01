@@ -8668,129 +8668,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5643227895393932035}
   m_PrefabAsset: {fileID: 0}
---- !u!81 &531673347
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531673342}
-  m_Enabled: 1
---- !u!114 &531673348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531673342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67e1392dfbcb3a43b615ea76c70bb40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 531673349}
-  audioClip:
-  - {fileID: 8300000, guid: 04e1a9bc556d86844a058bd267af3759, type: 3}
-  - {fileID: 8300000, guid: 45883b1be15f69249bbeaf3f09bbebc3, type: 3}
-  - {fileID: 8300000, guid: 0526dbb26b1af5a4aa9584248045fedf, type: 3}
-  - {fileID: 8300000, guid: 939de640ce50d6d4687e8b896e1cb5a8, type: 3}
-  anim: {fileID: 1882103814}
---- !u!82 &531673349
+--- !u!82 &531673349 stripped
 AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 531673349, guid: 599ca16fa0ed0ca479328d62b9883dc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5643227895393932035}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531673342}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 0
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &540099147
 GameObject:
   m_ObjectHideFlags: 0
@@ -17174,7 +17057,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9da740405e1915d408a10aefe35453a4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.521
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -31196,12 +31079,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64e8665119422a449a91f964ea8e14bd, type: 3}
---- !u!95 &1882103814 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3203919401014098792, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 5643227895393932035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1882944595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35339,35 +35216,20 @@ PrefabInstance:
       propertyPath: totalMagzine
       value: 
       objectReference: {fileID: 1533301805}
-    - target: {fileID: 5643227895442511818, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: bulletNo
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643227895442511818, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: totalBullet
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643227895539655170, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: runHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5643227895539655676, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.13
+      value: 87.34
       objectReference: {fileID: 0}
     - target: {fileID: 5643227895539655676, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.91
+      value: 8.17
       objectReference: {fileID: 0}
     - target: {fileID: 5643227895539655676, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.73
+      value: 30.24
       objectReference: {fileID: 0}
     - target: {fileID: 5643227895539655676, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
@@ -35414,11 +35276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5643227895539655677, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5643227895940432000, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: healthText
@@ -35429,16 +35286,6 @@ PrefabInstance:
       propertyPath: maxHealthText
       value: 
       objectReference: {fileID: 245200477}
-    - target: {fileID: 5643227895940432000, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: health
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5643227895940432000, guid: 599ca16fa0ed0ca479328d62b9883dc8,
-        type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5643227895940432001, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: killedNo

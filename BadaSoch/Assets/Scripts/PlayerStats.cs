@@ -25,12 +25,32 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health > maxHealth) {
+        if (health > maxHealth)
+        {
             health = maxHealth;
         }
+        if (health <= 0 || maxHealth <= 0)
+        //Player Dies
+        {
+            Debug.Log("Die");
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponentInChildren<CharacterController>().detectCollisions = false;
+            gameObject.GetComponentInChildren<Gun>().enabled = false;
+            maxHealthText.text = "0";
+            healthText.text = "0";
+            anim.SetBool("run", false);
+            anim.SetTrigger("Die");
+            Invoke("destroy", 1f);
+
+        }
     }
-    void decreaseHealth()
-    {
+
+    void destroy() {
+        gameObject.GetComponentInChildren<LoadScene>().loadScene("Retry");
+    }
+        void decreaseHealth()
+         { 
+
         if (health > 0)
         {
             maxHealthText.text = maxHealth.ToString();
@@ -48,16 +68,21 @@ public class PlayerStats : MonoBehaviour
             }
             healthText.text = health.ToString();
         }
-        else if(health <= 0 || maxHealth <= 0)
-        //Player Dies
-        {
-            maxHealthText.text = "0";
-            healthText.text = "0";
-            anim.SetBool("run", false);
-            anim.SetTrigger("Die");
-            
-        }
+            else if (health <= 0 || maxHealth <= 0)
+            //Player Dies
+            {
+                Debug.Log("Die");
+                gameObject.GetComponent<PlayerMovement>().enabled = false;
+                gameObject.GetComponentInChildren<CharacterController>().detectCollisions = false;
+             gameObject.GetComponentInChildren<Gun>().enabled = false;
+                maxHealthText.text = "0";
+                healthText.text = "0";
+                anim.SetBool("run", false);
+                anim.SetTrigger("Die");
+                Invoke("destroy", 1f);
+
+            }
         
-    }
+         }
     
 }

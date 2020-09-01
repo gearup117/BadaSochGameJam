@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         look();
-        if (!Input.GetMouseButton(0) && !anim.GetBool("reload") && playerStats.health > 0)
+        if (!Input.GetMouseButton(0) && !anim.GetBool("reload") && playerStats.health > 0 && playerStats.maxHealth > 0)
         {
             move();
         }
@@ -71,63 +71,67 @@ public class PlayerMovement : MonoBehaviour
 
     private void move()
     {
-        float tempSpeed;
-        if (!anim.GetBool("reload"))
+        if (playerStats.health > 0 && playerStats.maxHealth > 0)
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-            animate(x, z);
-            Vector3 move = (transform.right) * x + (transform.forward) * z;
-
-
-
-
-            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && (Input.GetKey(KeyCode.LeftShift)) && !anim.GetBool("relaod"))
+            float tempSpeed;
+            if (!anim.GetBool("reload"))
             {
+                float x = Input.GetAxis("Horizontal");
+                float z = Input.GetAxis("Vertical");
+                animate(x, z);
+                Vector3 move = (transform.right) * x + (transform.forward) * z;
 
-                //runleft
-                if (Input.GetKey(KeyCode.A))
+
+
+
+                if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && (Input.GetKey(KeyCode.LeftShift)) && !anim.GetBool("relaod"))
                 {
-                    body.transform.rotation = Quaternion.Euler(0, -90, 0);
+
+                    //runleft
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        body.transform.rotation = Quaternion.Euler(0, -90, 0);
+                    }
+                    //run top
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        body.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    }
+                    //run right
+                    if (Input.GetKey(KeyCode.D))
+                    {
+                        body.transform.rotation = Quaternion.Euler(0, 90, 0);
+                    }
+                    //run down
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        body.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    }
+
+                    //Run
+                    if (playerStats.health > runHealth)
+                    {
+                        tempSpeed = sprint;
+                        anim.SetBool("run", true);
+                        anim.SetFloat("vertical", 0);
+                        anim.SetFloat("horizontal", 0);
+                    }
+                    else
+                    {
+                        tempSpeed = speed;
+                        anim.SetBool("run", false);
+                    }
+
+
                 }
-                //run top
-                if (Input.GetKey(KeyCode.W))
+                else
                 {
-                    body.transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
-                //run right
-                if (Input.GetKey(KeyCode.D))
-                {
-                    body.transform.rotation = Quaternion.Euler(0, 90, 0);
-                }
-                //run down
-                if (Input.GetKey(KeyCode.S))
-                {
-                    body.transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
-                
-                //Run
-                if (playerStats.health > runHealth)
-                {
-                    tempSpeed = sprint;
-                    anim.SetBool("run", true);
-                    anim.SetFloat("vertical", 0);
-                    anim.SetFloat("horizontal", 0);
-                }
-                else {
-                    tempSpeed = speed;
                     anim.SetBool("run", false);
+                    tempSpeed = speed;
+
                 }
-
-
+                controller.Move(move * tempSpeed * Time.deltaTime);
             }
-            else
-            {
-                anim.SetBool("run", false);
-                tempSpeed = speed;
-
-            }
-            controller.Move(move * tempSpeed * Time.deltaTime);
         }
 
 

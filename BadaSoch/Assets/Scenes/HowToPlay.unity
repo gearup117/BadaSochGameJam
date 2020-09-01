@@ -1751,7 +1751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save Humans at the end of road
+  m_text: Defeat (BADA) Boss and Save Humans at the end of road
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 28
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1820,12 +1820,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -183.87195, w: 9.757714}
   m_textInfo:
     textComponent: {fileID: 1490144040}
-    characterCount: 30
+    characterCount: 53
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 10
+    wordCount: 11
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sprinting decreases health taking damage from enemies also
+  m_text: Sprinting decreases health.Walking increases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2130,10 +2130,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: -32.186558, z: -195.34515, w: 19.139679}
   m_textInfo:
     textComponent: {fileID: 1687261350}
-    characterCount: 58
+    characterCount: 44
     spriteCount: 0
-    spaceCount: 7
-    wordCount: 8
+    spaceCount: 3
+    wordCount: 5
     linkCount: 0
     lineCount: 2
     pageCount: 1
