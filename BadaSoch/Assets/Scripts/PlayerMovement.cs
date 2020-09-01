@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     public float speed, sprint;
     PlayerStats playerStats;
+    public int runHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,10 +105,19 @@ public class PlayerMovement : MonoBehaviour
                 {
                     body.transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
-                anim.SetBool("run", true);
-                anim.SetFloat("vertical", 0);
-                anim.SetFloat("horizontal", 0);
-                tempSpeed = sprint;
+                
+                //Run
+                if (playerStats.health > runHealth)
+                {
+                    tempSpeed = sprint;
+                    anim.SetBool("run", true);
+                    anim.SetFloat("vertical", 0);
+                    anim.SetFloat("horizontal", 0);
+                }
+                else {
+                    tempSpeed = speed;
+                    anim.SetBool("run", false);
+                }
 
 
             }
