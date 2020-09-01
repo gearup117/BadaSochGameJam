@@ -56,7 +56,7 @@ public class Gun : MonoBehaviour
             
         }
         //shoot
-        else if (Input.GetMouseButton(0) && Time.time >= shotCounter && bulletNo > 0 && !anim.GetBool("reload"))
+        else if (Input.GetMouseButton(0) && Time.time >= shotCounter && bulletNo > 0 && !anim.GetBool("reload") && !anim.GetBool("Die"))
         {
             shotCounter = Time.time + timeBetweenShots;
             bulletNo--;

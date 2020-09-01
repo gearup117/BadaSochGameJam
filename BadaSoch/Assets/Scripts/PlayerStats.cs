@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour
             }
             healthText.text = health.ToString();
         }
-        else
+        else if(health <= 0 || maxHealth <= 0)
         //Player Dies
         {
             maxHealthText.text = "0";
