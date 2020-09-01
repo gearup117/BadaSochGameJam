@@ -5,34 +5,31 @@ using UnityEngine;
 public class Sound : MonoBehaviour
 {
     public AudioSource audioSource;
-    public GameObject player;
-    private AudioListener audioListener;
+    
+    
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //audioListener = player.GetComponent<AudioListener>();
+    }
     void Start()
     {
-        audioListener = player.GetComponent<AudioListener>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(audioListener.enabled);
     }
     public void toggleSound() {
-        //if (!audioSource.mute)
-        //{
-        //    audioSource.mute = true;
-        //}
-        //else {
-        //    audioSource.mute = false;
-        //}
-        Debug.Log(audioListener.enabled);
-        if (!audioListener.enabled)
+        if (AudioListener.volume == 1f)
         {
-            audioListener.enabled = true;
+            AudioListener.volume = 0f;
         }
         else {
-            audioListener.enabled = false;
+            AudioListener.volume = 1f;
         }
+        
     }
 }

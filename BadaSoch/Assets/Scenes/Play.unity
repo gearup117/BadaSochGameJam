@@ -4491,7 +4491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106f256ba1d9be6498453f77b005a787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 963194230}
+  anim: {fileID: 963194226}
   player: {fileID: 531673343}
   height: 10
   smooth: 0.01
@@ -4857,7 +4857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 531673349}
-  player: {fileID: 531673342}
 --- !u!1001 &258491635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13894,7 +13893,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13902,14 +13900,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
+--- !u!95 &963194226
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -13967,25 +13976,6 @@ Transform:
   m_Father: {fileID: 212118943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &963194230
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 685b6e72539e7f444959262469540427, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &981965687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33888,8 +33878,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2135097424}
   - component: {fileID: 2135097423}
-  - component: {fileID: 2135097422}
   - component: {fileID: 2135097425}
+  - component: {fileID: 2135097422}
   m_Layer: 0
   m_Name: GoalCamera
   m_TagString: Untagged
@@ -35447,7 +35437,7 @@ PrefabInstance:
     - target: {fileID: 5643227895940432000, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
       propertyPath: maxHealth
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5643227895940432001, guid: 599ca16fa0ed0ca479328d62b9883dc8,
         type: 3}
